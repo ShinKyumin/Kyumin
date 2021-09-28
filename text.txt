@@ -1,2 +1,5 @@
 hi my name is Kyumin
 modified
+
+hi, I modified this .txt file in Github
+at 4:18 pm
