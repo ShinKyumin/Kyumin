@@ -1,3 +1,5 @@
+//gradle.app에서 버전 확인 필수!
+
 package com.example.practice2
 
 import android.Manifest
