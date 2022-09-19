@@ -1,0 +1,33 @@
+package com.example.high3_practice
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.transition.ChangeBounds
+import android.transition.Fade
+import android.transition.Scene
+import android.transition.TransitionManager
+import com.example.high3_practice.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //setContentView(R.layout.activity_main)
+
+        var binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        var scene1 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_1, this)
+        var scene2 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_2, this)
+
+        val button1 = binding.radioButton
+        val button2 = binding.radioButton2
+
+        button1.setOnClickListener {
+            TransitionManager.go(scene1, ChangeBounds())
+        }
+        button2.setOnClickListener {
+            TransitionManager.go(scene2, Fade())
+        }
+    }
+
+}
