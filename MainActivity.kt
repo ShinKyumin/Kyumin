@@ -22,13 +22,10 @@ class MainActivity : AppCompatActivity() {
             with(myDao) {
                 insertStudent(Student(1, "james"))
                 insertStudent(Student(2, "john"))
-                /*
                 insertClass(ClassInfo(1, "c-lang", "Mon 9:00", "E301", 1))
                 insertClass(ClassInfo(2, "android prog", "Tue 9:00", "E302", 1))
                 insertEnrollment(Enrollment(1, 1))
                 insertEnrollment(Enrollment(1, 2))
-
-                 */
             }
         }
 
@@ -45,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             binding.textStudentList.text = str
         }
 
-        /*binding.queryStudent.setOnClickListener {
+        binding.queryStudent.setOnClickListener {
             val id = binding.editStudentId.text.toString().toInt()
             CoroutineScope(Dispatchers.IO).launch {
                 val results = myDao.getStudentsWithEnrollment(id)
@@ -74,8 +71,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-         */
         binding.addStudent.setOnClickListener {
             val id = binding.editStudentId.text.toString().toInt()
             val name = binding.editStudentName.text.toString()
@@ -88,8 +83,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.deleteButton.setOnClickListener {
             val id = binding.editStudentId.text.toString().toInt()
-            CoroutineScope(Dispatchers.IO).launch {
-                myDao.deleteStudent(Student(id, ""))
+            if( id > 0) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    myDao.deleteStudent(Student(id, ""))
+                }
+            }
+        }
+        binding.enrollButton.setOnClickListener {
+            val id = binding.editStudentId.text.toString().toInt()
+            if (id > 0) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    myDao.insertEnrollment(Enrollment(id, 1))
+                }
             }
         }
     }
