@@ -4,6 +4,7 @@
 보관소라기보단 백업용도 라고 보면 될듯하다
 
 ###########################################
+# English
 here is Code repository for my android code using in study club
 this is for backup, not repostiory maybe
 
