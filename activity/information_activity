@@ -1,0 +1,46 @@
+package com.example.myapplication
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.myapplication.databinding.ActivityInformationBinding
+
+class information_activity : AppCompatActivity() {
+    /*
+    가장 중요한 화면이다. 이 화면을 중심으로 여러가지 화면으로 이동 할 수있다.
+    여러가지 버튼이 있는데 이곳도 딱히 특이사항은 없다.
+     */
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+                val binding = ActivityInformationBinding.inflate(layoutInflater)
+                setContentView(binding.root)
+
+                //총장 소개
+                binding.button.setOnClickListener {
+                    val intent = Intent(this, SecondActivity::class.java)
+                    startActivity(intent)
+                }
+                //학교 소개
+                binding.button2.setOnClickListener {
+                    val intent = Intent(this, ThirdActivity::class.java)
+                    startActivity(intent)
+                }
+                //지도
+                binding.button3.setOnClickListener {
+                    val intent = Intent(this, MapsActivity::class.java)
+                    startActivity(intent)
+                }
+                //건물소개
+                binding.button4.setOnClickListener {
+                    val intent = Intent(this, FifthActivity::class.java)
+                    startActivity(intent)
+                }
+                //학과(트랙) 소개
+                binding.button5.setOnClickListener {
+                    val intent = Intent(this, SixthActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
+
