@@ -1,0 +1,57 @@
+package com.example.myapplication
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.transition.Fade
+import androidx.transition.Scene
+import androidx.transition.TransitionManager
+import com.example.myapplication.databinding.ActivityFifthBinding
+
+class FifthActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        /*
+        아마 가장 큰 노가다를 하게 될 부분인거 같다.
+        각 건물마다 scene을 제작하여 라디오 버튼을 누르면 해당 건물의 정보를 담고있는 scene으로 바뀐다
+        ㅅㅂ 개쌩노가다 줫같다
+         */
+        super.onCreate(savedInstanceState)
+        var binding = ActivityFifthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        var scene1 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_1, this)
+        var scene2 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_2, this)
+        var scene3 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_3, this)
+        var scene4 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_4, this)
+        var scene5 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_5, this)
+        var scene6 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_6, this)
+        var scene7 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_7   , this)
+        var scene8 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene_8, this)
+
+        binding.sangsang.setOnClickListener {
+            TransitionManager.go(scene1, Fade())
+        }
+
+        binding.research.setOnClickListener {
+            TransitionManager.go(scene2, Fade())
+        }
+        binding.future.setOnClickListener {
+            TransitionManager.go(scene3, Fade())
+        }
+        binding.oochon.setOnClickListener {
+            TransitionManager.go(scene4, Fade())
+        }
+        binding.jinlee.setOnClickListener {
+            TransitionManager.go(scene5, Fade())
+        }
+        binding.tamgoo.setOnClickListener {
+            TransitionManager.go(scene6, Fade())
+        }
+        binding.army.setOnClickListener {
+            TransitionManager.go(scene7, Fade())
+        }
+        binding.gonghak.setOnClickListener {
+            TransitionManager.go(scene8, Fade())
+        }
+    }
+
+}
