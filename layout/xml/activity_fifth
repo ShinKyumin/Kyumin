@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FifthActivity"
+    android:orientation="vertical">
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/research"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="연구관" />
+
+        <RadioButton
+            android:id="@+id/sangsang"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="상상관" />
+
+        <RadioButton
+            android:id="@+id/future"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="미래관" />
+
+        <RadioButton
+            android:id="@+id/oochon"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="우촌관" />
+
+        <RadioButton
+            android:id="@+id/jinlee"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="진리관" />
+
+        <RadioButton
+            android:id="@+id/tamgoo"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="탐구관" />
+
+        <RadioButton
+            android:id="@+id/army"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="학군단" />
+
+        <RadioButton
+            android:id="@+id/gonghak"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="공학관" />
+
+        <RadioButton
+            android:id="@+id/changeui"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="창의관" />
+
+        <RadioButton
+            android:id="@+id/insung"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="인성관" />
+
+        <RadioButton
+            android:id="@+id/cube"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="상상큐브" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/scene_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
+
+        <include
+            layout="@layout/scene_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

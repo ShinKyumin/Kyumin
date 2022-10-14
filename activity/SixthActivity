@@ -1,0 +1,32 @@
+package com.example.myapplication
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.transition.Fade
+import androidx.transition.Scene
+import androidx.transition.TransitionManager
+import com.example.myapplication.databinding.ActivitySixthBinding
+
+class SixthActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivitySixthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        var scene1 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene2_1, this)
+        var scene2 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene2_2, this)
+        //var scene3 = Scene.getSceneForLayout(binding.sceneRoot, R.layout.scene)
+
+        val creative = binding.creative
+        val computer = binding.computer
+
+        creative.setOnClickListener {
+            TransitionManager.go(scene1, Fade())
+        }
+
+        computer.setOnClickListener {
+            TransitionManager.go(scene2, Fade())
+        }
+    }
+}
