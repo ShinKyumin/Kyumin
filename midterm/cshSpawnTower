@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class cshSpawnTower : MonoBehaviour
+{
+    public Transform Tower;
+    public Transform SpawnTowerpos1;
+    public Transform SpawnTowerpos2;
+
+    private int count = 1;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+    //Instantiate(Tower, SpawnTowerpos1.position, SpawnTowerpos2.rotation);
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetMouseButtonUp(0))
+        { 
+            if(count == 1)
+            {
+                Instantiate(Tower, SpawnTowerpos1.position, SpawnTowerpos1.rotation);
+                count++;
+            }
+            else if (count == 2)
+            {
+                Instantiate(Tower, SpawnTowerpos2.position, SpawnTowerpos2.rotation);
+                count++;
+            }
+            else
+            {
+                Debug.Log("더이상 설치 할 수 없습니다.");
+            }
+        }
+    }
+}
