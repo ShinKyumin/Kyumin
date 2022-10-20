@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class cshFire : MonoBehaviour
+{
+	private float bulletSpeed = 1000.0f; //접근 불가(밖에서 수정 ㄴㄴ)
+	private Transform thisTransform;
+	// Use this for initialization
+	void Start()
+	{
+		thisTransform = GetComponent<Transform>(); //bullet에 넣을꺼니까 bullet의 transform
+		FireBullet();
+	}
+
+	void FireBullet()
+	{
+		GetComponent<Rigidbody>().AddForce(thisTransform.forward * bulletSpeed);
+		//힘의 방향과 힘 필요(파라미터), forward는 z축
+	}
+
+}
