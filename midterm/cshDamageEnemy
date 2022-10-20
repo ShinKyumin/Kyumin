@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class cshDamageEnemy : MonoBehaviour
+{
+    public int hp;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    private void OnTriggerEnter(Collider coll)
+    {
+        if(coll.gameObject.tag=="BULLET")
+        {
+            hp--;
+            Destroy(coll.gameObject);
+            Debug.Log("총알 맞았다");
+            Debug.Log("남은 hp : " + hp);
+
+            if(hp ==0)
+            {
+                Destroy(gameObject);
+                Debug.Log("죽었다");
+            }
+            if (hp < 0)
+                hp = 0;
+
+        }
+    }
+}
